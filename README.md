@@ -2,21 +2,41 @@
 
 Este projeto segue os princípios da **Clean Architecture** e está organizado em camadas bem definidas.
 
+## ✨ **Características Principais**
+
+- 🏗️ **Clean Architecture** com separação clara de responsabilidades
+- 🔧 **ASP.NET Core 8** Web API com Swagger integrado
+- 🐛 **Debug otimizado** para VS Code com launch automático do Swagger
+- 📦 **Estrutura organizada** sem subpastas desnecessárias
+- ⚙️ **Configurações prontas** para desenvolvimento (.vscode/)
+- 🔗 **Git configurado** e pronto para GitHub
+- 📝 **Documentação completa** com instruções de uso
+
 ## Estrutura do Projeto
 
 ```
 SnnProject/
-├── SnnProject.sln                 # Solution principal
-├── Api/                           # Camada de apresentação (Web API)
-│   └── SnnProject.Api/
-├── Application/                   # Camada de aplicação (Casos de uso)
+├── .vscode/                       # Configurações do VS Code
+│   ├── launch.json               # Configurações de debug
+│   ├── tasks.json                # Tarefas de build/run
+│   ├── settings.json             # Configurações do workspace
+│   └── extensions.json           # Extensões recomendadas
+├── Api/                          # Camada de apresentação (Web API)
+│   ├── Program.cs
+│   ├── SnnProject.Api.csproj
+│   ├── appsettings.json
+│   └── Properties/
+├── Application/                  # Camada de aplicação (Casos de uso)
 │   └── SnnProject.Application/
-├── Domain/                        # Camada de domínio (Entidades e regras de negócio)
+├── Domain/                       # Camada de domínio (Entidades e regras de negócio)
 │   └── SnnProject.Domain/
-├── Infrastructure/                # Camada de infraestrutura (Dados, serviços externos)
+├── Infrastructure/               # Camada de infraestrutura (Dados, serviços externos)
 │   └── SnnProject.Infrastructure/
-└── Crosscutting/                  # Funcionalidades transversais (Logging, Utils, etc.)
-    └── SnnProject.Crosscutting/
+├── Crosscutting/                # Funcionalidades transversais (Logging, Utils, etc.)
+│   └── SnnProject.Crosscutting/
+├── SnnProject.sln               # Solution principal
+├── README.md                    # Documentação do projeto
+└── .gitignore                   # Arquivos ignorados pelo Git
 ```
 
 ## Dependências entre Camadas
@@ -85,13 +105,13 @@ dotnet build
 ### Executar a API
 
 ```bash
-dotnet run --project Api/SnnProject.Api/SnnProject.Api.csproj
+dotnet run --project Api/SnnProject.Api.csproj
 ```
 
 ### Executar com watch (auto-reload)
 
 ```bash
-dotnet watch run --project Api/SnnProject.Api/SnnProject.Api.csproj
+dotnet watch run --project Api/SnnProject.Api.csproj
 ```
 
 ### Executar testes
@@ -104,17 +124,17 @@ dotnet test
 
 O projeto está configurado com arquivos para debug no VS Code:
 
-### 🐛 **Configurações de Debug (.vscode/launch.json)**
+### 🐛 **Configuração de Debug (.vscode/launch.json)**
 
-- **`.NET Core Launch (web)`**: Debug padrão da API
-- **`.NET Core Launch (console)`**: Debug no console interno
-- **`.NET Core Attach`**: Anexar a processo em execução
-- **`Debug API with Swagger`**: Debug abrindo automaticamente o Swagger na porta padrão
-- **`Debug API with Swagger (Port 5000)`**: Debug abrindo Swagger na porta 5000
+- **`Debug API with Swagger`**: Configuração única otimizada que:
+  - ✅ Compila o projeto automaticamente
+  - ✅ Inicia a API em modo debug
+  - ✅ Detecta automaticamente a porta
+  - ✅ Abre o Swagger no navegador
 
 ### 📋 **Tarefas Disponíveis (.vscode/tasks.json)**
 
-- **`build`**: Compila toda a solution (Ctrl+Shift+P → "Tasks: Run Task")
+- **`build`**: Compila toda a solution (tarefa padrão)
 - **`watch`**: Executa API com auto-reload
 - **`Run API`**: Executa a API normalmente
 - **`run-api-swagger`**: Executa API e prepara para Swagger
@@ -125,9 +145,10 @@ O projeto está configurado com arquivos para debug no VS Code:
 
 ### ⌨️ **Como usar o Debug com Swagger**
 
-1. **F5**: Inicia debug → Escolha "Debug API with Swagger"
-2. **Swagger abre automaticamente** no navegador quando a API estiver pronta
-3. **URL do Swagger**: `http://localhost:[porta]/swagger`
+1. **F5** ou **Ctrl+F5**: Inicia automaticamente com Swagger
+2. **Swagger abre automaticamente** no navegador
+3. **Breakpoints**: Clique na margem esquerda do editor
+4. **Tasks**: Ctrl+Shift+P → "Tasks: Run Task" → Escolher tarefa
 4. **Breakpoints**: Clique na margem esquerda do editor
 5. **Ctrl+Shift+P** → "Tasks: Run Task" → "run-api-swagger" para execução simples
 
@@ -154,6 +175,42 @@ O projeto inclui um arquivo `.vscode/extensions.json` com extensões recomendada
 - **Organize Imports**: Organização automática de imports
 - **File Nesting**: Organização visual de arquivos relacionados
 - **Semantic Highlighting**: Destaque semântico de código
+
+## Controle de Versão
+
+### 📦 **Git & GitHub**
+
+O projeto está configurado com Git e pronto para GitHub:
+
+- ✅ **Repositório Git inicializado**
+- ✅ **.gitignore otimizado** para .NET
+- ✅ **Commit inicial** realizado
+- ✅ **Branch main** configurada
+
+### 🚀 **Para conectar ao GitHub:**
+
+1. **Crie um repositório** no GitHub
+2. **Execute os comandos:**
+   ```bash
+   git remote add origin https://github.com/SEU_USUARIO/NOME_REPO.git
+   git push -u origin main
+   ```
+
+### 📝 **Comandos Git úteis:**
+
+```bash
+# Adicionar mudanças
+git add .
+
+# Fazer commit
+git commit -m "Sua mensagem"
+
+# Enviar para GitHub
+git push
+
+# Ver status
+git status
+```
 
 ## Próximos Passos
 
