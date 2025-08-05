@@ -1,0 +1,22 @@
+{
+    "dotnet.defaultSolution": "SnnProject.sln",
+    "omnisharp.defaultLaunchSolution": "SnnProject.sln",
+    "files.exclude": {
+        "**/bin": true,
+        "**/obj": true
+    },
+    "explorer.fileNesting.enabled": true,
+    "explorer.fileNesting.patterns": {
+        "*.cs": "${capture}.*.cs",
+        "*.csproj": "*.csproj.user"
+    },
+    "dotnet.completion.showCompletionItemsFromUnimportedNamespaces": true,
+    "dotnet.server.useOmnisharp": false,
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+        "source.fixAll": "explicit",
+        "source.organizeImports": "explicit"
+    },
+    "csharp.format.enable": true,
+    "csharp.semanticHighlighting.enabled": true
+}
