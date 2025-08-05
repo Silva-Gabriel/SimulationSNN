@@ -120,6 +120,15 @@ dotnet watch run --project Api/SnnProject.Api.csproj
 dotnet test
 ```
 
+## 🌐 **URLs e Endpoints**
+
+Quando a API estiver rodando, você pode acessar:
+
+- **API Base**: `http://localhost:5270` (ou porta automática)
+- **Swagger UI**: `http://localhost:5270/swagger`
+- **OpenAPI Spec**: `http://localhost:5270/swagger/v1/swagger.json`
+- **Exemplo Endpoint**: `http://localhost:5270/weatherforecast`
+
 ## Debug no VS Code
 
 O projeto está configurado com arquivos para debug no VS Code:
@@ -134,14 +143,14 @@ O projeto está configurado com arquivos para debug no VS Code:
 
 ### 📋 **Tarefas Disponíveis (.vscode/tasks.json)**
 
-- **`build`**: Compila toda a solution (tarefa padrão)
-- **`watch`**: Executa API com auto-reload
-- **`Run API`**: Executa a API normalmente
-- **`run-api-swagger`**: Executa API e prepara para Swagger
+- **`build`**: Compila toda a solution (tarefa padrão - Ctrl+Shift+B)
 - **`publish`**: Publica a API para produção
-- **`restore`**: Restaura dependências NuGet
-- **`clean`**: Limpa arquivos de build
-- **`test`**: Executa todos os testes
+- **`watch`**: Executa API com auto-reload (detecta mudanças automaticamente)
+- **`Run API`**: Executa a API normalmente em background
+- **`restore`**: Restaura dependências NuGet da solution
+- **`clean`**: Limpa arquivos de build (bin/obj)
+- **`test`**: Executa todos os testes da solution
+- **`run-api-swagger`**: Executa API com configurações otimizadas para Swagger
 
 ### ⌨️ **Como usar o Debug com Swagger**
 
@@ -149,14 +158,23 @@ O projeto está configurado com arquivos para debug no VS Code:
 2. **Swagger abre automaticamente** no navegador
 3. **Breakpoints**: Clique na margem esquerda do editor
 4. **Tasks**: Ctrl+Shift+P → "Tasks: Run Task" → Escolher tarefa
-4. **Breakpoints**: Clique na margem esquerda do editor
-5. **Ctrl+Shift+P** → "Tasks: Run Task" → "run-api-swagger" para execução simples
+
+### 🔑 **Atalhos Úteis**
+
+- **Ctrl+Shift+B**: Executa tarefa de build padrão
+- **Ctrl+Shift+P**: Abre Command Palette
+- **F5**: Inicia debug
+- **Ctrl+F5**: Executa sem debug
+- **Ctrl+C**: Para execução no terminal
 
 ## Tecnologias
 
-- **.NET 8**
-- **ASP.NET Core Web API**
-- **Clean Architecture**
+- **.NET 8**: Framework principal
+- **ASP.NET Core Web API**: Para criação de APIs REST
+- **Swagger/OpenAPI**: Documentação automática da API
+- **Clean Architecture**: Padrão arquitetural
+- **Git**: Controle de versão
+- **VS Code**: Editor recomendado com configurações otimizadas
 
 ## Configuração do VS Code
 
